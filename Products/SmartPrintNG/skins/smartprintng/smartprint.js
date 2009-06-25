@@ -49,6 +49,7 @@ function getContentElement() {
 
 
     if (! el[0])
+        //TODO: i18nize this message
         alert('No DOM node with id "region-content" or "content" found');
 
     return el;
@@ -61,6 +62,7 @@ function openControl() {
 
         var divContent  = getContentElement().clone(true);
         if (! divContent) {
+            //TODO: i18nize this message
             alert('Error: the element with id=content could not be found!');
             return;
         }
@@ -71,6 +73,7 @@ function openControl() {
     } else {
 
         if (in_progres) {
+            //TODO: i18nize this message
             alert('Conversion in progres...please wait');
             return;
         }
@@ -108,6 +111,7 @@ function startConversion(url) {
 
     var divContent  = getContentElement().clone(true);
     if (! divContent) {
+        //TODO: i18nize this message
         alert('Error: the element with id=content could not be found!');
         return;
     }
@@ -142,12 +146,14 @@ function startConversion(url) {
                                         document.location = url + '/smartPrintDeliver?filename=' + encodeURIComponent(filename);
                                     } else {
                                         var status = request.status;
+                                        //TODO: i18nize this message
                                         alert('Conversion failed (Error code: ' + status + ')');
                                     }
                                },
                                onFailure: function(request){
                                    in_progres = false;
                                    var status = request.status;
+                                   //TODO: i18nize this message
                                    alert('Conversion failed (Error code: ' + status + ')');
                                    closeControl();
                                }
