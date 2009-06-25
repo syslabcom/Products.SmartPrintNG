@@ -7,6 +7,9 @@
 
 """ HTML manipulation methods """
 
+# Import "SPNGMessageFactory as _" to create messages in the smartprintng domain
+from Products.SmartPrintNG import SPNGMessageFactory as _
+
 import re
 import random
 from cStringIO import StringIO
@@ -222,9 +225,9 @@ def breakIntoPages(html, seperator='(h1|h2)'):
 
 
 available_manipulations = (
-    {'label' : 'removeImages', 'method' : removeImages, 'description': 'Remove images', 'state' : False},
-    {'label' : 'removeLinks', 'method' : removeLinks, 'description': 'Remove links', 'state' : False},
-    {'label' : 'addLinkList', 'method' : addLinkList, 'description': 'Add link list', 'state' : False},
-    {'label' : 'breakIntoPages', 'method' : breakIntoPages, 'description': 'Break into pages', 'state' : False},
-    {'label' : 'removeReviewHistory', 'method' : removeReviewHistory, 'description': 'Remove review history', 'state' : True},
+    {'label' : 'removeImages', 'method' : removeImages, 'description': _(u'Remove images'), 'state' : False},
+    {'label' : 'removeLinks', 'method' : removeLinks, 'description': _(u'Remove links'), 'state' : False},
+    {'label' : 'addLinkList', 'method' : addLinkList, 'description': _(u'Add link list'), 'state' : False},
+    {'label' : 'breakIntoPages', 'method' : breakIntoPages, 'description': _(u'Break into pages'), 'state' : False},
+    {'label' : 'removeReviewHistory', 'method' : removeReviewHistory, 'description': _(u'Remove review history'), 'state' : True},
 )
