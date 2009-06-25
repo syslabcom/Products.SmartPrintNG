@@ -2,6 +2,7 @@
 -------------------
 
 - skins.xml cleanup
+- Added better support of l18n for the l10n
 
 1.2.10 (24.05.2009)
 -------------------
