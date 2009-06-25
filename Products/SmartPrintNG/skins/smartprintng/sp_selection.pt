@@ -10,7 +10,7 @@
             <table id="sp-options">
                 <tr>
                     <th i18n:translate="options">Options</th>
-                    <th i18n:translate="content-look-and-feel">Content and look & feel</th>
+                    <th i18n:translate="content-look-and-feel">Content &amp; look and feel</th>
                     <th i18n:translate="output format">Output format</th>
                     <th i18n:translate="output options">Output options</th>
                 </tr>
@@ -99,7 +99,7 @@
                         <label for="orientation" i18n:translate="label_orientation">Orientation</label>
                         <br/>
                         <select name="print_options.orientation:record" id="orientation">
-                            <option value="portrait" i18n:translate="label_portrait" default>Portrait</option>
+                            <option value="portrait" i18n:translate="label_portrait" selected="selected">Portrait</option>
                             <option value="landscape" i18n:translate="label_landscape">Landscape</option>
                         </select>
                         <br/>
@@ -139,7 +139,7 @@
 
         <div class="sp-footer" i18n:translate="copyright">
             <a href="http://smartprintng.zopyx.com">SmartPrintNG</a> 
-            is (C) 2007, 2008 <a href="http://www.zopyx.com">ZOPYX Ltd. &amp; Co. KG</a>, 
+            is (C) 2007 - 2009 <a href="http://www.zopyx.com">ZOPYX Ltd. &amp; Co. KG</a>, 
             D-72070 T&uuml;bingen, Germany, 
             <a href="http://www.zopyx.com">www.zopyx.com</a>, 
             <a href="http://www.zopyx.de">www.zopyx.de</a>, 
