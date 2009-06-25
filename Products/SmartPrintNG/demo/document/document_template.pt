@@ -1,4 +1,10 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en-US" lang="en-US"
+      i18n:domain="smartprintng">
+
     <head tal:define="stylesheet    options/stylesheet | string:StandardStylesheet;
                       fo_stylesheet options/fo_stylesheet | string:default;
                      ">
@@ -14,7 +20,8 @@
              tal:replace="structure python: view(stylesheet)" 
         />
     </head>
-<body>
+
+    <body>
 
     <div class="header">
         <table>
@@ -23,22 +30,22 @@
                     <img src="http://www.zopyx.com/images/zopyx_logo_small.gif" />
                 </td>
                 <td class="col2">
-                    <div class="col2">     
+                    <div class="col2" i18n:translate="doc_tp_col2-0">     
                         <b>ZOPYX Ltd. &amp; Co. KG</b>
                     </div>     
-                    <div class="col2">     
+                    <div class="col2" i18n:translate="doc_tp_col2-1">     
                         Charlottenstraße 37/1
                     </div>     
-                    <div class="col2">
+                    <div class="col2" i18n:translate="doc_tp_col2-2">
                         D-72070 Tübingen, Germany     
                     </div>     
-                    <div class="col2">
+                    <div class="col2" i18n:translate="doc_tp_col2-3">
                         Phone: +49-7071-793267
                     </div>     
-                    <div class="col2">
+                    <div class="col2" i18n:translate="doc_tp_col2-4">
                         Fax: +49-7071-7936840
                     </div>     
-                    <div class="col2">
+                    <div class="col2" i18n:translate="doc_tp_col2-5">
                         www.zopyx.com, info@zopyx.com
                     </div>     
                 </td>
@@ -48,9 +55,11 @@
 
     <div class="main">
         <hr/>
-        <h1>This is a demonstration template</h1>
+        <h1 i18n:translate="doc_tp_demo_heading">This is a demonstration template</h1>
         <hr/>
         <tal:span replace="structure options/body | nothing" />
     </div>
 
-</body>
+    </body>
+
+</html>
