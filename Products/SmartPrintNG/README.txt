@@ -1,17 +1,16 @@
-==================================================================================
-SmartPrintNG - high-quality export of Plone content to PDF, RTF, ODT, WML and DOCX
-==================================================================================
+``Produce & Publish for Plone`` - high-quality export of Plone content to PDF, RTF, ODT, WML and DOCX
+=====================================================================================================
 
 
-SmartPrintNG provides high-quality export to the most common office formats
-like PDF, RTF, ODT, DOCX and WML based on XSL-FO. 
+``Produce & Publish for Plone`` provides high-quality export to the most common
+office formats like PDF, RTF, ODT, DOCX and WML based on XSL-FO. 
 
 
 Features:
 ---------
 
-SmartPrintNG can convert the 'content' view of Plone documents into different
-formats:
+``Produce & Publish for Plone`` can convert the 'content' view of Plone
+documents into different formats:
 
 - PDF
 
@@ -61,39 +60,39 @@ Installation:
 
 - ensure that **zopyx.convert** is installed **including all its dependencies**
 
-- unpack the SmartPrintNG archive inside the *Products* folder of your instance home
+- unpack the ``Products.SmartPrintNG`` archive inside the *Products* folder of your instance home
 
-- add SmartPrintNG through the **Add/Remove programms** functionalty inside the 
+- add ``Products.SmartPrintNG`` through the **Add/Remove programms** functionalty inside the 
   Plone UI 
 
 - if you create a new Plone site, ensure to pick up the proper extension profile
   matching your Plone version
 
 
-Using SmartPrintNG:
--------------------
+Using ``Produce & Publish for Plone``:
+--------------------------------------
 
 - on Plone 3.0 you will see **Export** as new document action. Clicking on it will
-  open the SmartPrintNG control panel at the bottom of your current page.
+  open the ``Produce & Publish for Plone`` control panel at the bottom of your current page.
 
 
 License
 -------
 
-SmartPrintNG is published under LGNU Public License V 3.0 (LGPL 3.0). 
+``Produce & Publish for Plone`` is published under LGNU Public License V 3.0 (LGPL 3.0). 
 
 
 Copyright
 ---------
 
-SmartPrintNG is (C) 2007, 2008, ZOPYX Ltd. & Co KG, Charlottenstr. 37/1,
+``Produce & Publish for Plone`` is (C) 2007, 2008, ZOPYX Ltd. & Co KG, Charlottenstr. 37/1,
 D-72070 Tuebingen, Germany
 
 
 Author
 ------
 
-SmartPrintNG was written by Andreas Jung for ZOPYX Ltd. & Co. KG, Tuebingen,
+``Produce & Publish for Plone`` was written by Andreas Jung for ZOPYX Ltd. & Co. KG, Tuebingen,
 Germany.
 
 
