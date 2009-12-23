@@ -20,10 +20,8 @@ def install(self, reinstall=False):
         version = '3.1'
     elif plone_version.startswith('3.2'):
         version = '3.2'
-    elif plone_version.startswith('3.3'):
-        version = '3.3'
     else:
-        raise RuntimeError('Unsupported Plone version %s' % plone_version)
+        version = '3.3'
 
     tool=getToolByName(self, "portal_setup")
 
