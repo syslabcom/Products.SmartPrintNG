@@ -34,10 +34,10 @@ LOG = logging.getLogger()
 
 class SmartPrintView(BrowserView):
 
-    def convert(self, 
-                html=None, 
+    def convert(self,
+                html=None,
                 options=(),
-                format='pdf', 
+                format='pdf',
                 content_extractor='',
                 print_options={},
                 converter_name='zopyx.smartprintng.converters.default',
@@ -75,7 +75,7 @@ class SmartPrintView(BrowserView):
         if isinstance(html, unicode):
             html = html.encode('utf-8')
 
-        # Store HTML as a temporary file 
+        # Store HTML as a temporary file
         tmpf = tempfile.mktemp()
         open(tmpf, 'wb').write(html)
 
@@ -94,12 +94,15 @@ class SmartPrintView(BrowserView):
 
         if redirect:
             if ok:
-                return self.request.RESPONSE.redirect(self.context.absolute_url() + 
+                return self.request.RESPONSE.redirect(self.context.absolute_url() +
                                                      '/smartPrintDeliver?filename=%s' % output_filename)
             raise RuntimeError('Error converting file')
 
         else:
             if ok:
+                # setting header preventing diazo (and other stuffs?) wrapping
+                # simple filename path into full html doc
+                self.request.RESPONSE.setHeader('content-type', 'text/plain')
                 return output_filename
             raise RuntimeError('Error converting file')
 
@@ -110,7 +113,6 @@ class SmartPrintView(BrowserView):
         def normalize(s):
             s = s.replace(' ', '_')
             return s
-
         filename = os.path.abspath(filename)
         if not filename.startswith(tempfile.gettempdir()):
             raise RuntimeError('Can not download %s' % filename)
@@ -119,7 +121,7 @@ class SmartPrintView(BrowserView):
         base, ext = os.path.splitext(os.path.basename(filename))
         id = normalize(self.context.getId())
 
-        R = self.context.request.RESPONSE
+        R = self.context.REQUEST.response
         R.setHeader('content-type', type)
         R.setHeader('content-length', os.stat(filename)[6])
         R.setHeader('content-disposition', 'attachment; filename=%s%s' % (id, ext))
@@ -211,7 +213,7 @@ class SmartPrintView(BrowserView):
 
 
     def availableContentExtractors(self):
-        """ return all names of registered IHTMLExtractor adapters for 
+        """ return all names of registered IHTMLExtractor adapters for
             the current context object.
         """
         return [name for name, adapter in getAdapters((self.context,), IHTMLExtractor)]
