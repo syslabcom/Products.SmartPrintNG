@@ -9,8 +9,6 @@
 
 var in_progres = false;
 
-var $j = jQuery.noConflict();
-
 // remove stuff from the copied content region
 
 function cleanupContent(node) {
@@ -43,9 +41,9 @@ function cleanupContent(node) {
 
 function getContentElement() {
 
-    var el = $j('#content');
+    var el = $('#content');
     if (! el[0])
-        el = $j('#region-content');
+        el = $('#region-content');
 
 
     if (! el[0])
@@ -58,7 +56,7 @@ function getContentElement() {
 
 function openControl() {
 
-    if (! $j('#smartprint')[0]) {
+    if (! $('#smartprint')[0]) {
 
         var divContent  = getContentElement().clone(true);
         if (! divContent) {
@@ -83,15 +81,15 @@ function openControl() {
 }
 
 function closeControl() {
-    $j('#smartprint').remove();
+    $('#smartprint').remove();
 }
 
 
 // open the SP control and show the selection HTML snippet
 
 function showResponse(request) {
-    if ($j('#smartprint'))
-        $j('#smartprint')[0].innerHTML = request.responseText;
+    if ($('#smartprint'))
+        $('#smartprint')[0].innerHTML = request.responseText;
 }
 
 function smartPrintSelection(url, template) {
@@ -99,7 +97,7 @@ function smartPrintSelection(url, template) {
     openControl();
 
     var url = url + '/' + template;
-    var r = $j.ajax( {url: url,
+    var r = $.ajax( {url: url,
                     type: 'GET',
                     complete: showResponse
                             });
@@ -120,20 +118,20 @@ function startConversion(url) {
     cleanupContent(divContent);
 
     // put HTML into the form in order to generate a query string from it
-    $j('#smartprint-html')[0].value = divContent.innerHTML
+    $('#smartprint-html')[0].value = divContent.innerHTML
 
-    var postBody= $j('#smartprint-selection-form').serialize();
+    var postBody= $('#smartprint-selection-form').serialize();
 
     in_progres = true;
 
     // Load "in-progres" page
-    var r = $j.ajax( {url: url + '/sp_progres',
+    var r = $.ajax( {url: url + '/sp_progres',
                               type: 'GET',
                               asynchronous: false,
                               complete: showResponse
                             });
 
-    var r2 = $j.ajax({url:url + '/smartPrintConvert',
+    var r2 = $.ajax({url:url + '/smartPrintConvert',
                                type: 'POST',
                                asynchronous: true,
                                data: postBody,
