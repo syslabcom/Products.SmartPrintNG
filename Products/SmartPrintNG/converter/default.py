@@ -67,14 +67,15 @@ class Converter(object):
             if not iface.providedBy(context):
                 continue
 
-            for name, template_filename in d2['templates']:
-                if name == options.template:
-                    template = ViewPageTemplateFile(template_filename)
-                    # we need to set the debug flag to make the code
-                    # work on Plone 2.5 aka Zope 2.9
-                    context.request.debug = False
-                    html = template(context, **d)
-                    break
+            # FIXME
+            # for name, template_filename in d2['templates']:
+            #     if name == options.template:
+            #         template = ViewPageTemplateFile(template_filename)
+            #         # we need to set the debug flag to make the code
+            #         # work on Plone 2.5 aka Zope 2.9
+            #         context.request.debug = False
+            #         html = template(context, **d)
+            #         break
 
         # Last, fix all image links and export all related images 
         # into the filesystem
