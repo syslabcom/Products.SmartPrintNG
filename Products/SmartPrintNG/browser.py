@@ -68,6 +68,7 @@ class SmartPrintView(BrowserView):
         # create up converter utility
         converter = createObject(converter_name)
 
+        html = "<html><head><title></title></head><body>"+html+"</body></html>"
         # 'html' should utf-8 encoded (from encodeURIComponent)
         html = converter.convert(self.context, html, options, **kw)
 
