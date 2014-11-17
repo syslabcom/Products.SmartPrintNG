@@ -1,3 +1,9 @@
+1.2.14-slc (unreleased)
+-----------------------
+
+- Nothing changed yet.
+
+
 1.2.13-slc (2014-11-17)
 -----------------------
 - Plone 4.0 compatibility
